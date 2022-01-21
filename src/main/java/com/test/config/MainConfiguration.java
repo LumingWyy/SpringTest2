@@ -13,10 +13,10 @@ import org.springframework.context.annotation.*;
 public class MainConfiguration {
 
 
-    @Bean("aaaaa")
-    public Card card() {
-        return new Card();
-    }
+//    @Bean("aaaaa")
+//    public Card card() {
+//        return new Card();
+//    }
 
 //    @Bean
 //    public Student student(@Autowired Card card){
