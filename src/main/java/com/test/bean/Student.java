@@ -24,15 +24,19 @@ public class Student {
 //    public void setName(String name) {
 //        this.name = name;
 //    }
-    @Autowired
-//    @Qualifier("bbb")
-    public void setCard (Card card) {
-        System.out.println("i am injection");
-        this.card = card;
-    }
-    @PostConstruct
-    public void init() {
-        System.out.println("shuxing card " + card);
+//    @Autowired
+////    @Qualifier("bbb")
+////    public void setCard (Card card) {
+////        System.out.println("i am injection");
+////        this.card = card;
+////    }
+//    @PostConstruct
+//    public void init() {
+//        System.out.println("shuxing card " + card);
+//    }\
+    public void say(String text) {
+        System.out.println("i am "+name +" age "+ age + " say " +text);
+
     }
 
 }
