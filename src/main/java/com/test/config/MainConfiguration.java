@@ -2,23 +2,28 @@ package com.test.config;
 
 import com.test.bean.Card;
 import com.test.bean.Student;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.*;
 
+import java.util.Date;
+
+@EnableAspectJAutoProxy
+
+@ComponentScans({
+        @ComponentScan("com.test.bean"),
+        @ComponentScan("com.test.aop")
+})
 @Configuration
+@Import({TestConfiguration.class, Date.class})
 public class MainConfiguration {
-
-    @Bean
-    @Scope("prototype")
-    public Card card() {
-        return new Card();
-    }
-
-    @Bean
-    public Student student(){
-        Student student= new Student();
-        student.setName("Tom");
-        return student;
-    }
+//    @Bean("aaaaa")
+//    public Card card() {
+//        return new Card();
+//    }
+//    @Bean
+//    public Student student(@Autowired Card card){
+//        Student student= new Student();
+//        student.setCard(card);
+//        return student;
+//    }
 }
