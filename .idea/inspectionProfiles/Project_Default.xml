@@ -5,6 +5,8 @@
       <option name="excludeList">
         <list>
           <option value="org.springframework:spring-context" />
+          <option value="org.mybatis:mybatis" />
+          <option value="org.springframework:spring-aspects" />
         </list>
       </option>
     </inspection_tool>
