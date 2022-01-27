@@ -13,10 +13,11 @@ import java.util.Date;
 
 @EnableAspectJAutoProxy
 
-@ComponentScans({
-        @ComponentScan("com.test.bean"),
-        @ComponentScan("com.test.aop")
-})
+//@ComponentScans({
+//        @ComponentScan("com.test.bean"),
+//        @ComponentScan("com.test.aop")
+//})
+@ComponentScan("com.test.service")
 @Configuration
 @Import({TestConfiguration.class, Date.class})
 public class MainConfiguration {

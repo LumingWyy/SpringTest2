@@ -5,6 +5,7 @@ import com.test.bean.Student;
 import com.test.bean.Teacher;
 import com.test.config.MainConfiguration;
 import com.test.mapper.TestMapper;
+import com.test.service.TestService;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -27,9 +28,10 @@ public class main {
 //        Thread.sleep(3000);
 //        System.out.println( context.getBean(Date.class));
 
-        SqlSessionTemplate template = context.getBean(SqlSessionTemplate.class);
-        TestMapper testMapper = template.getMapper(TestMapper.class);
-        System.out.println(testMapper.getStudent());
-
+//        SqlSessionTemplate template = context.getBean(SqlSessionTemplate.class);
+//        TestMapper testMapper = template.getMapper(TestMapper.class);
+//        System.out.println(testMapper.getStudent());
+        TestService service = context.getBean(TestService.class);
+        System.out.println(service.getStudent());
     }
 }
