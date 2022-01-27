@@ -2,6 +2,8 @@ package com.test.config;
 
 import com.test.bean.Card;
 import com.test.bean.Student;
+import com.zaxxer.hikari.HikariConfigMXBean;
+import com.zaxxer.hikari.HikariDataSource;
 import lombok.SneakyThrows;
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.apache.ibatis.io.Resources;
@@ -13,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.Date;
 
 @EnableAspectJAutoProxy
@@ -45,10 +48,10 @@ public class MainConfiguration {
 //    }
 
     @Bean
-    public DataSource dataSource() {
-        PooledDataSource dataSource = new PooledDataSource();
-        dataSource.setUrl("jdbc:mysql://192.168.56.103:3306/Study");
-        dataSource.setDriver("com.mysql.cj.jdbc.Driver");
+    public DataSource dataSource() throws SQLException {
+        HikariDataSource dataSource = new HikariDataSource();
+        dataSource.setJdbcUrl("jdbc:mysql://192.168.56.103:3306/Study");
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUsername("root");
         dataSource.setPassword("");
         return dataSource;

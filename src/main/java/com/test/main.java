@@ -6,14 +6,17 @@ import com.test.bean.Teacher;
 import com.test.config.MainConfiguration;
 import com.test.mapper.TestMapper;
 import com.test.service.TestService;
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
 
+@Slf4j
 public class main {
     public static void main(String[] args) throws InterruptedException {
+        log.info("Service start");
 //        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MainConfiguration.class);
 //        Student student = context.getBean(Student.class);
