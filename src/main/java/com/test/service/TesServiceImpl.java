@@ -11,11 +11,10 @@ import javax.annotation.Resource;
 public class TesServiceImpl implements TestService{
 
     @Resource
-    SqlSessionTemplate template;
+    TestMapper testMapper;
 
     @Override
     public Student getStudent(){
-        TestMapper testMapper = template.getMapper(TestMapper.class);
         return testMapper.getStudent();
     }
 
