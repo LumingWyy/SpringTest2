@@ -13,6 +13,9 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.TransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -24,6 +27,7 @@ import java.util.Date;
 //        @ComponentScan("com.test.bean"),
 //        @ComponentScan("com.test.aop")
 //})
+@EnableTransactionManagement
 @MapperScan("com.test.mapper")
 @ComponentScan("com.test.service")
 @Configuration
@@ -46,7 +50,10 @@ public class MainConfiguration {
 //                new SqlSessionFactoryBuilder()
 //                        .build(Resources.getResourceAsReader("mybatis-config.xml")));
 //    }
-
+    @Bean
+    public TransactionManager transactionManager(@Autowired DataSource source){
+        return new DataSourceTransactionManager(source);
+    }
     @Bean
     public DataSource dataSource() throws SQLException {
         HikariDataSource dataSource = new HikariDataSource();

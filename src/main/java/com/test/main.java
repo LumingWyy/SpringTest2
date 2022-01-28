@@ -35,6 +35,7 @@ public class main {
 //        TestMapper testMapper = template.getMapper(TestMapper.class);
 //        System.out.println(testMapper.getStudent());
         TestService service = context.getBean(TestService.class);
-        System.out.println(service.getStudent());
+//        System.out.println(service.getStudent());
+        service.test();
     }
 }
