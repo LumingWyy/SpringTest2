@@ -28,8 +28,9 @@ import java.util.Date;
 //        @ComponentScan("com.test.aop")
 //})
 @EnableTransactionManagement
+@ComponentScan("com.test.bean")
 @MapperScan("com.test.mapper")
-@ComponentScan("com.test.service")
+@ComponentScan("com.test")
 @Configuration
 //@Import({TestConfiguration.class, Date.class})
 public class MainConfiguration {

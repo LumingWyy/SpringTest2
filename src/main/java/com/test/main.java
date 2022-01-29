@@ -37,8 +37,8 @@ public class main {
 //        TestService service = context.getBean(TestService.class);
 //        System.out.println(service.getStudent());
 //        service.test();
-
-        System.out.println(context.getBean(Student.class));
+        Student student = context.getBean(Student.class);
+        System.out.println(student.getClass());
 
     }
 }

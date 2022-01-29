@@ -44,5 +44,8 @@ public class Student {
 //        System.out.println("i am "+name +" age "+ age + " say " +text);
 //
 //    }
+    public static class ArtStudent extends Student{
+
+    }
 
 }
