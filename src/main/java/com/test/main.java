@@ -34,8 +34,11 @@ public class main {
 //        SqlSessionTemplate template = context.getBean(SqlSessionTemplate.class);
 //        TestMapper testMapper = template.getMapper(TestMapper.class);
 //        System.out.println(testMapper.getStudent());
-        TestService service = context.getBean(TestService.class);
+//        TestService service = context.getBean(TestService.class);
 //        System.out.println(service.getStudent());
-        service.test();
+//        service.test();
+
+        System.out.println(context.getBean(Student.class));
+
     }
 }

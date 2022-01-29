@@ -4,21 +4,23 @@ import lombok.Data;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 //@ToString
-//@Component
-@Data
+@Component
+//@Scope("prototype")
+//@Data
 public class Student {
     int sid;
     String name;
     int age;
     //    String name;
-    //@Resource
-//    Card card;
+    @Resource
+    Card card;
 
 //    public Student() {
 //        System.out.println("i am constructor ");
